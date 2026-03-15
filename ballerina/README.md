@@ -1,6 +1,15 @@
 ## Overview
 
-This module offers APIs for connecting with Deepseek Large Language Models (LLM).
+DeepSeek provides high-performance large language models (LLMs) optimized for various natural language processing tasks.
+
+The DeepSeek connector offers APIs for connecting with DeepSeek Large Language Models (LLMs), enabling the integration of advanced conversational AI and language processing capabilities into applications.
+
+### Key Features
+
+- Connect and interact with DeepSeek Large Language Models (LLMs)
+- Support for DeepSeek-V3, DeepSeek-Coder, and other models
+- Efficient handling of conversational prompts and completions
+- Secure communication with API key authentication
 
 ## Prerequisites
 
