@@ -59,6 +59,14 @@ isolated function getExpectedParameterSchema(string message) returns map<json> {
         return expectedParameterSchemaStringForRateBlog2;
     }
 
+    if message.startsWith("How would you rate these text chunks") {
+        return expectedParameterSchemaStringForRateBlog5;
+    }
+
+    if message.startsWith("How would you rate this text chunk") {
+        return expectedParameterSchemaStringForRateBlog;
+    }
+
     if message.startsWith("What's the output of the Ballerina code below?") {
         return expectedParamterSchemaStringForBalProgram;
     }
@@ -96,7 +104,7 @@ isolated function getExpectedParameterSchema(string message) returns map<json> {
     }
 
     if message.startsWith("Give me a random joke") {
-        return {"type":"object","properties":{"result":{"anyOf":[{"type":"string"},{"type":"null"}]}}};
+        return {"type": "object", "properties": {"result": {"anyOf": [{"type": "string"}, {"type": "null"}]}}};
     }
 
     if message.startsWith("Name a random world class cricketer in India") {
@@ -143,6 +151,14 @@ isolated function getTheMockLLMResult(string message) returns string {
         return review;
     }
 
+    if message.startsWith("How would you rate these text chunks") {
+        return string `{"result": [${review}, ${review}]}`;
+    }
+
+    if message.startsWith("How would you rate this text chunk") {
+        return {result: 4}.toJsonString();
+    }
+
     if message.startsWith("What is 1 + 1?") {
         return "{\"result\": 2}";
     }
@@ -184,7 +200,7 @@ isolated function getTheMockLLMResult(string message) returns string {
         return review;
     }
 
-        if message.startsWith("Name a random world class cricketer in India") {
+    if message.startsWith("Name a random world class cricketer in India") {
         return "{\"result\": {\"name\": \"Sanga\"}}";
     }
 
@@ -229,7 +245,7 @@ isolated function getTestServiceResponse(string content) returns DeepSeekChatCom
     ]
 };
 
-isolated function getExpectedPrompt(string message) returns string {
+isolated function getExpectedPrompt(string message) returns json {
     if message.startsWith("Rate this blog") {
         return expectedPromptStringForRateBlog;
     }
@@ -244,6 +260,14 @@ isolated function getExpectedPrompt(string message) returns string {
 
     if message.startsWith("Please rate this blog") {
         return expectedPromptStringForRateBlog2;
+    }
+
+    if message.startsWith("How would you rate these text chunks") {
+        return expectedContentPartsForTextChunkArray;
+    }
+
+    if message.startsWith("How would you rate this text chunk") {
+        return expectedContentPartsForTextChunk;
     }
 
     if message.startsWith("What is 1 + 1?") {
@@ -301,7 +325,7 @@ isolated function getExpectedPrompt(string message) returns string {
     }
 
     if message.startsWith("Name top 10 world class cricketers") {
-        return "Name top 10 world class cricketers"; 
+        return "Name top 10 world class cricketers";
     }
 
     if message.startsWith("Name a random world class cricketer in India") {
