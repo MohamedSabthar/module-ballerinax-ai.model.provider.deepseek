@@ -74,7 +74,7 @@ final string expectedPromptStringForRateBlog7 =
 final string expectedPromptStringForRateBlog8 =
     string `How would you rate this text blog out of 10, Title: ${blog1.title} Content: ${blog1.content} .`;
 
-final string expectedPromptStringForRateBlog9 = string 
+final string expectedPromptStringForRateBlog9 = string
     `How would you rate this text blogs out of 10. Title: ${blog1.title} Content: ${blog1.content} Title: ${blog1.title} Content: ${blog1.content} . Thank you!`;
 
 final string expectedPromptStringForRateBlog10 = string `Evaluate this blogs out of 10.
@@ -101,14 +101,11 @@ const expectedPromptStringForBalProgram = string `What's the output of the Balle
 
 const expectedPromptStringForCountry = string `Which country is known as the pearl of the Indian Ocean?`;
 
-const expectedParameterSchemaStringForRateBlog =
-    {"type": "object", "properties": {"result": {"type": "integer"}}};
+const expectedParameterSchemaStringForRateBlog = {"type": "object", "properties": {"result": {"type": "integer"}}};
 
-const expectedParameterSchemaStringForRateBlog7 =
-    {"type":"object","properties":{"result":{"type":["integer", "null"]}}};
+const expectedParameterSchemaStringForRateBlog7 = {"type": "object", "properties": {"result": {"type": ["integer", "null"]}}};
 
-const expectedParameterSchemaStringForRateBlog2 =
-    {
+const expectedParameterSchemaStringForRateBlog2 = {
     "type": "object",
     "required": ["comment", "rating"],
     "properties": {
@@ -117,11 +114,9 @@ const expectedParameterSchemaStringForRateBlog2 =
     }
 };
 
-const expectedParameterSchemaStringForRateBlog3 =
-    {"type": "object", "properties": {"result": {"type": "boolean"}}};
+const expectedParameterSchemaStringForRateBlog3 = {"type": "object", "properties": {"result": {"type": "boolean"}}};
 
-const expectedParameterSchemaStringForRateBlog4 =
-    {
+const expectedParameterSchemaStringForRateBlog4 = {
     "type": "object",
     "properties": {
         "result": {
@@ -135,8 +130,7 @@ const expectedParameterSchemaStringForRateBlog4 =
     }
 };
 
-const expectedParameterSchemaStringForRateBlog5 =
-    {
+const expectedParameterSchemaStringForRateBlog5 = {
     "type": "object",
     "properties": {
         "result": {
@@ -153,8 +147,7 @@ const expectedParameterSchemaStringForRateBlog5 =
     }
 };
 
-const expectedParameterSchemaStringForRateBlog6 =
-    {
+const expectedParameterSchemaStringForRateBlog6 = {
     "type": "object",
     "properties": {
         "result": {
@@ -166,62 +159,18 @@ const expectedParameterSchemaStringForRateBlog6 =
     }
 };
 
-const expectedParamterSchemaStringForBalProgram =
-    {"type": "object", "properties": {"result": {"type": "integer"}}};
+const expectedParamterSchemaStringForBalProgram = {"type": "object", "properties": {"result": {"type": "integer"}}};
 
-const expectedParamterSchemaStringForCountry =
-    {"type": "object", "properties": {"result": {"type": "string"}}};
+const expectedParamterSchemaStringForCountry = {"type": "object", "properties": {"result": {"type": "string"}}};
 
-
-const expectedParamSchemaForArrayUnionNull =
-    {
-        "type": "object",
-        "properties": {
-            "result": {
-                "anyOf": [
-                    {
-                        "type": "array",
-                        "items": {
-                            "required": [
-                                "name"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
-            }
-        }
-    };
-
-const expectedParameterSchemaForArrayUnionRec =
-    {
-        "type": "object",
-        "properties": {
-            "result": {
-                "anyOf": [
-                    {
-                        "type": "array",
-                        "items": {
-                            "required": [
-                                "name"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    },
-                    {
+const expectedParamSchemaForArrayUnionNull = {
+    "type": "object",
+    "properties": {
+        "result": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
                         "required": [
                             "name"
                         ],
@@ -232,46 +181,35 @@ const expectedParameterSchemaForArrayUnionRec =
                             }
                         }
                     }
-                ]
-            }
+                },
+                {
+                    "type": "null"
+                }
+            ]
         }
-    };
+    }
+};
 
-const expectedParameterSchemaForArrayUnionBasicType = 
-    {
-        "type": "object",
-        "properties": {
-            "result": {
-                "anyOf": [
-                    {
-                        "type": "array",
-                        "items": {
-                            "required": [
-                                "name"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                }
+const expectedParameterSchemaForArrayUnionRec = {
+    "type": "object",
+    "properties": {
+        "result": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "required": [
+                            "name"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
                             }
                         }
-                    },
-                    {
-                        "type": "string"
                     }
-                ]
-            }
-        }
-    };
-
-const expectedParameterSchemaForArrayOnly = 
-    {
-        "type": "object",
-        "properties": {
-            "result": {
-                "type": "array",
-                "items": {
+                },
+                {
                     "required": [
                         "name"
                     ],
@@ -282,17 +220,19 @@ const expectedParameterSchemaForArrayOnly =
                         }
                     }
                 }
-            }
+            ]
         }
-    };
+    }
+};
 
-const expectedParameterSchemaForRecUnionBasicType = 
-    {
-        "type": "object",
-        "properties": {
-            "result": {
-                "anyOf": [
-                    {
+const expectedParameterSchemaForArrayUnionBasicType = {
+    "type": "object",
+    "properties": {
+        "result": {
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
                         "required": [
                             "name"
                         ],
@@ -302,36 +242,95 @@ const expectedParameterSchemaForRecUnionBasicType =
                                 "type": "string"
                             }
                         }
-                    },
-                    {
+                    }
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    }
+};
+
+const expectedParameterSchemaForArrayOnly = {
+    "type": "object",
+    "properties": {
+        "result": {
+            "type": "array",
+            "items": {
+                "required": [
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
                         "type": "string"
                     }
-                ]
+                }
             }
         }
-    };
+    }
+};
 
-const expectedParameterSchemaForRecUnionNull = 
-    {
-        "type": "object",
-        "properties": {
-            "result": {
-                "anyOf": [
-                    {
-                        "required": [
-                            "name"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "type": "string"
-                            }
+const expectedParameterSchemaForRecUnionBasicType = {
+    "type": "object",
+    "properties": {
+        "result": {
+            "anyOf": [
+                {
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
                         }
-                    },
-                    {
-                        "type": "null"
                     }
-                ]
-            }
+                },
+                {
+                    "type": "string"
+                }
+            ]
         }
-    };
+    }
+};
+
+const expectedParameterSchemaForRecUnionNull = {
+    "type": "object",
+    "properties": {
+        "result": {
+            "anyOf": [
+                {
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        }
+    }
+};
+
+const expectedContentPartsForTextChunk = string `How would you rate this text chunk content out of 10.` +
+    string ` Title: Tips for Growing a Beautiful Garden Content: Spring is the perfect time to start your garden. 
+        Begin by preparing your soil with organic compost and ensure proper drainage. 
+        Choose plants suitable for your climate zone, and remember to water them regularly. 
+        Don't forget to mulch to retain moisture and prevent weeds. .`;
+
+const expectedContentPartsForTextChunkArray = string `How would you rate these text chunks out of 10.` +
+    string ` Title: Tips for Growing a Beautiful Garden Content: Spring is the perfect time to start your garden. 
+        Begin by preparing your soil with organic compost and ensure proper drainage. 
+        Choose plants suitable for your climate zone, and remember to water them regularly. 
+        Don't forget to mulch to retain moisture and prevent weeds. Title: Tips for Growing a Beautiful Garden Content: Spring is the perfect time to start your garden. 
+        Begin by preparing your soil with organic compost and ensure proper drainage. 
+        Choose plants suitable for your climate zone, and remember to water them regularly. 
+        Don't forget to mulch to retain moisture and prevent weeds. . Thank you!`;

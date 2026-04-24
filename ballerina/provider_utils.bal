@@ -104,15 +104,14 @@ isolated function generateChatCreationContent(ai:Prompt prompt) returns string|a
         string str = strings[i + 1];
         anydata insertion = insertions[i];
 
-        if insertion is ai:TextDocument {
+        if insertion is ai:TextDocument|ai:TextChunk {
             promptStr += insertion.content + " " + str;
             continue;
         }
 
-        if insertion is ai:TextDocument[] {
-            foreach ai:TextDocument doc in insertion {
+        if insertion is (ai:TextDocument|ai:TextChunk)[] {
+            foreach ai:TextDocument|ai:TextChunk doc in insertion {
                 promptStr += doc.content + " ";
-
             }
             promptStr += str;
             continue;
